@@ -26,8 +26,8 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
-import java.util.HashMap;
-import java.util.Map;
+java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.Properties;
 
 import com.google.gwt.i18n.client.Constants;
@@ -45,7 +45,7 @@ public class Hermes {
     private static final String PROPERTIES_EXT = ".properties";
     private static final String UTF_8 = "UTF-8";
     
-    private static Map<String, Object> cache = new HashMap<String, Object>();
+    private static ConcurrentMap<String, Object> cache = new ConcurrentHashMap<String, Object>();
     
     /**
      * For a given interface and locale ,retrieves the GWT i18n interface as a 
